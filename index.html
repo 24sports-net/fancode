@@ -123,11 +123,18 @@
                     card.className = 'card';
 
                     card.innerHTML = `
-                        <h2>${match.tournament}</h2>
-                        <p><strong>Match:</strong> ${match.title}</p>
-                        <p><strong>Date and Time:</strong> ${new Date(match.time_added).toLocaleString()}</p>
-                        <p><strong>Indian Only Stream:</strong> <a href="play.html?url=${encodeURIComponent(match.initialUrl)}" class="button">Watch Here</a></p>
-                        <p><strong>World Wide Stream:</strong> <a href="play.html?url=${encodeURIComponent(match.Url)}" class="button">Watch Here</a></p>
+                        <h2><?php echo htmlspecialchars($title['tournament']); ?></h2>
+                    <p><strong>Title:</strong> <?php echo htmlspecialchars($title['title']); ?></p>
+                    <p><strong>Source:</strong> <?php echo htmlspecialchars($title['src']); ?></p>
+                    <p><strong>Team 1:</strong> <?php echo htmlspecialchars($title['team_1']); ?></p>
+                    <p><strong>Team 2:</strong> <?php echo htmlspecialchars($title['team_2']); ?></p>
+                    <p><strong>Status:</strong> <?php echo htmlspecialchars($title['status']); ?></p>
+                    <p><strong>Event Name:</strong> <?php echo htmlspecialchars($title['event_name']); ?></p>
+                    <p><strong>Match Name:</strong> <?php echo htmlspecialchars($title['match_name']); ?></p>
+                    <p><strong>Match ID:</strong> <?php echo htmlspecialchars($title['match_id']); ?></p>
+                    <p><strong>Match Time:</strong> <?php echo htmlspecialchars($title['startTime']); ?></p>
+                    <p><strong>Normal Stream:</strong> <a href="play.html?url=${encodeURIComponent($title['dai_url'])}" class="button">Watch Here</a></p>
+                    <p><strong>World Wide Stream:</strong> <a href="play.html?url=${encodeURIComponent($title['adfree_url'])}" class="button">Watch Here</a></p>
                     `;
 
                     container.appendChild(card);
