@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MOMIXTV</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .jwplayer {
+            position: absolute !important;
+        }
+
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="jwplayerDiv"></div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const streamUrl = params.get('url');
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (streamUrl) {
+                jwplayer("jwplayerDiv").setup({
+                    file: streamUrl,
+                    position: 'bottom',
+                    autostart: true,
+                    stretching: "",
+                    width: "100%",
+                    type: "hls",
+                });
+            } else {
+                alert('Stream URL is missing!');
+            }
+
+            if (confirm("Join Our Whatsapp Group 24 Sports")) {
+                window.location.href = "https://t.me/momixtv";
+            }
+        });
+    </script>
+</body>
+</html>
